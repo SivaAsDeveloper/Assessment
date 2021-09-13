@@ -1,0 +1,84 @@
+<div style="width: 400px; margin: auto;">
+    <div *ngIf="currentasset" class="edit-form">
+      <h4>Asset</h4>
+      <form>
+        <div class="form-group">
+          <label for="FileName">FileName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="FileName"
+            [(ngModel)]="currentasset.FileName"
+            name="FileName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="MIMEType">MIMEType</label>
+          <input
+            type="text"
+            class="form-control"
+            id="MIMEType"
+            [(ngModel)]="currentasset.MIMEType"
+            name="MIMEType"
+          />
+        </div>
+        <div class="form-group">
+            <label for="CreatedBy">CreatedBy</label>
+            <input
+              type="text"
+              class="form-control"
+              id="CreatedBy"
+              [(ngModel)]="currentasset.CreatedBy"
+              name="CreatedBy"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Email"
+              [(ngModel)]="currentasset.Email"
+              name="Email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="Country">Country</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Country"
+              [(ngModel)]="currentasset.Country"
+              name="Country"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Description">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Description"
+              [(ngModel)]="currentasset.Description"
+              name="Description"
+            />
+          </div>
+
+      
+      </form>
+      <button
+        type="submit"
+        class="btn btn-success"
+        (click)="updateasset()"
+      >
+        Update
+      </button>
+      <a class="btn btn-info" routerLink="/asset-list">Back to List</a>
+      <p class="label label-success">{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentasset">
+      <br />
+      <p class="label label-error">Cannot access this Tutorial...</p>
+    </div>
+  </div>

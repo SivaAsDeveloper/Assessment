@@ -1,0 +1,83 @@
+<div style="width: 400px; margin: auto;">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="FileName">FileName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="FileName"
+            required
+            [(ngModel)]="asset.FileName"
+            name="FileName"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="MIMEType">MIMEType</label>
+          <input
+            class="form-control"
+            id="MIMEType"
+            required
+            [(ngModel)]="asset.MIMEType"
+            name="MIMEType"
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="CreatedBy">CreatedBy</label>
+            <input
+              type="text"
+              class="form-control"
+              id="CreatedBy"
+              required
+              [(ngModel)]="asset.CreatedBy"
+              name="CreatedBy"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Email"
+              required
+              [(ngModel)]="asset.Email"
+              name="Email"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="Country">Country</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Country"
+              required
+              [(ngModel)]="asset.Country"
+              name="Country"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="Description">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Description"
+              required
+              [(ngModel)]="asset.Description"
+              name="Description"
+            />
+          </div>
+        <button (click)="saveAsset()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4 class="label label-success">You submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newAsset()">Add</button>
+        <a class="btn btn-info" routerLink="/asset-list">Back to List</a>
+      </div>
+    </div>
+  </div>
